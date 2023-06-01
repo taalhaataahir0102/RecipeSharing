@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import './Signup.css';
-import axios from 'axios';
 
 const Signup = () => {
   const [fullName, setFullName] = useState('');
@@ -25,7 +24,7 @@ const Signup = () => {
       const message = data.message;
       console.log(message);
       if (response.ok) {
-        alert('Signup successful!');
+        //alert('Signup successful!');
         window.location.href = '/signin';
       }
       else{

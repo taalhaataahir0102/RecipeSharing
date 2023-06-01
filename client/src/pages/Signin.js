@@ -9,7 +9,8 @@ const Signin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/signin', {
+      // console.log("Hi")
+      const response = await fetch('https://peach-zebra-coat.cyclic.app/api/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -21,11 +22,13 @@ const Signin = () => {
         // Signin successful
         console.log('Signin successful');
         console.log('Token:', data.token);
+        localStorage.setItem('token', data.token);
+        window.location.href = '/dashboard';
         // Store the token in local storage or cookies for future use
         // Redirect to the dashboard or another page
       } else {
         // Signin failed
-        setErrorMessage(data.message);
+        alert(data.message);
       }
     } catch (error) {
       console.error('Signin error:', error);
@@ -37,24 +40,39 @@ const Signin = () => {
   };
 
   return (
-    <div className="signin-container">
-      <h2>Signin</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Signin</button>
-      </form>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+    <div className="signup-container">
+      <div className="left-side"></div>
+      <div className="right-side">
+        <div className="form-container">
+          <h2>Create an Account</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <button type="submit">Sign In</button>
+          </form>
+          <div className="signin-link">
+            Already have an account? <a href="/">Sign up</a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
