@@ -1,4 +1,4 @@
-// https://peach-zebra-coat.cyclic.app/api/form
+// https://peach-zebra-coat.cyclic.app/api/signup
 
 import React, { useState } from 'react';
 import './Signup.css';
@@ -13,21 +13,30 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://peach-zebra-coat.cyclic.app/api/form', {
-        fullName,
-        email,
-        password,
-      });
-
-      console.log(response.data); // Handle success response
+      console.log("hi")
+      const response = await fetch('https://peach-zebra-coat.cyclic.app/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ fullName, email, password }),
+    });
+      const data = await response.json();
+      const message = data.message;
+      console.log(message);
+      if (response.ok) {
+        alert('Signup successful!');
+        window.location.href = '/signin';
+      }
+      else{
+        alert(message);
+        window.location.href = '/';
+      }
       // TODO: Handle successful signup, e.g., redirect to dashboard or show a success message
-    //   alert('Signup successful!');
-      window.location.href = '/signin';
-
-    } catch (error) {
+    } catch (error){
       console.error(error); // Handle error response
       // TODO: Handle error during signup, e.g., display an error message to the user
-      alert('Signup Failed!');
+      alert("FAILED");
       window.location.href = '/';
     }
 
