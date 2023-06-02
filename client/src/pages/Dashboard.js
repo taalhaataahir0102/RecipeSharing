@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
+import Header from './Header';
+import './Dashboard.css';
+// http://localhost:5000/api/user
 
 const Dashboard = () => {
+  const [userInfo, setUserInfo] = useState(null);
   useEffect(() => {
-    // Check if token is present in local storage
     const token = localStorage.getItem('token');
     if (!token) {
       // If token is not present, redirect to signin page
       window.location.href = '/signin';
     } else {
       // If token is present, verify its validity
-      fetch('https://peach-zebra-coat.cyclic.app/api/protected', {
+      fetch('https://peach-zebra-coat.cyclic.app/api/user', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -18,7 +21,14 @@ const Dashboard = () => {
           if (!response.ok) {
             // If token is not valid, redirect to signin page
             window.location.href = '/signin';
+          } else {
+            // If token is valid, retrieve user information
+            return response.json();
           }
+        })
+        .then((data) => {
+          // Set the user information in state
+          setUserInfo(data.user);
         })
         .catch((error) => {
           console.error('Error:', error);
@@ -27,13 +37,19 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="content">
+    <div className="dashboard-container">
+      <Header />
+      <div className="dashboard-content">
         <h1 className="title">Dashboard</h1>
         <p className="subtitle">Welcome to the protected dashboard!</p>
-        {/* <button className="logout-btn" onClick={handleLogout}>
-          Logout
-        </button> */}
+        {userInfo && (
+            <div>
+              <h2>User Information:</h2>
+              <p>Name: {userInfo.fullName}</p>
+              <p>Email: {userInfo.email}</p>
+              {/* Add additional user information as needed */}
+            </div>
+          )}
       </div>
     </div>
   );
