@@ -13,9 +13,22 @@ function Header() {
     setIsSortOpen(!isSortOpen);
   };
 
+  const toggleCreatePost = () => {
+    window.location.href = '/createpost';
+  };
+
+  const handleLogout = () => {
+    // Perform any necessary logout actions here, such as clearing token or user data
+    localStorage.removeItem('token'); // Remove the token from localStorage
+  
+    // Redirect the user to the login page
+    window.location.href = '/signin';
+  };
+
   return (
     <div className="header">
       <div className="header-left">
+      <button className="header-btn" onClick={toggleCreatePost}>Create Post</button>
         <button className="header-btn" onClick={toggleCategories}>
           Categories
         </button>
@@ -38,9 +51,7 @@ function Header() {
             <button className="dropdown-btn">Recent</button>
           </div>
         )}
-        <button className="header-btn">Favourites</button>
-        <button className="header-btn">Shopping List</button>
-        <button className="header-btn">Logout</button>
+        <button className="header-btn" onClick={handleLogout}>Logout</button>
       </div>
     </div>
   );

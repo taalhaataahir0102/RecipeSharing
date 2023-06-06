@@ -1,0 +1,80 @@
+.dashboard-container {
+  display: flex;
+  background-color: #fff8e7;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.create-post-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .create-post-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .select-category {
+    width: 200px;
+  }
+  
+  .ingredient-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .ingredient-row input[type='text'] {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  .add-ingredient {
+    cursor: pointer;
+    color: #007bff;
+    margin-left: 10px;
+  }
+  
+  .remove-ingredient {
+    color: #dc3545;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  button[type='submit'] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type='submit']:hover {
+    background-color: #0056b3;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 200px;
+    resize: vertical;
+  }
+  

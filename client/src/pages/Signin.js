@@ -4,7 +4,6 @@ import './Signin.css';
 const Signin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +31,6 @@ const Signin = () => {
       }
     } catch (error) {
       console.error('Signin error:', error);
-      setErrorMessage('An error occurred during signin. Please try again later.');
     }
     // Reset form fields
     setEmail('');

@@ -1,0 +1,17 @@
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #f1f1f1; */
+    background-color: #a1c4fd;
+    /* background-color: #dca6ad; */
+    /* background-color: #98d7c2; */
+    padding: 10px;
+  }
+  
+  .symbol {
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
