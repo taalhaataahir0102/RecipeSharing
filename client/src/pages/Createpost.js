@@ -52,7 +52,7 @@ const CreatePost = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const token = localStorage.getItem('token');
-    const response = await fetch('http://localhost:5000/api/post', {
+    const response = await fetch('https://peach-zebra-coat.cyclic.app/api/post', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
