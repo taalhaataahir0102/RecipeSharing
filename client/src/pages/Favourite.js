@@ -30,10 +30,12 @@ const Dashboard = () => {
     try {
       console.log("postId:", postId);
       // Send the post id to the backend API
+      const token = localStorage.getItem('token');
       const response = await fetch('https://peach-zebra-coat.cyclic.app/api/liked', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ postId }),
       });
