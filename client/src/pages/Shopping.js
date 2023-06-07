@@ -54,6 +54,27 @@ const Shoppinglist = () => {
     }
   };
 
+  const handleEmailButtonClick = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const response = await fetch('https://peach-zebra-coat.cyclic.app/api/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ shoppingList }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+      console.log('Email sent successfully');
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  };
+
   return (
     <div className="dashboard-container">
       <Header />
@@ -73,6 +94,9 @@ const Shoppinglist = () => {
               </li>
             ))}
           </ul>
+          <button className="email-button" onClick={handleEmailButtonClick}>
+            Email me
+          </button>
         </div>
       </div>
     </div>
