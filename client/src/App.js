@@ -7,6 +7,8 @@ import Signin from './pages/Signin';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import CreatePost from './pages/Createpost';
+import Favourite from './pages/Favourite'
+import Shopping from './pages/Shopping'
 function App() {
   return (
     <Router> 
@@ -21,6 +23,10 @@ function App() {
         <Route path="/profile" element={<Profile/>}>
         </Route>
         <Route path="/createpost" element={<CreatePost/>}>
+        </Route>
+        <Route path="/favourites" element={<Favourite/>}>
+        </Route>
+        <Route path="/shoppinglist" element={<Shopping/>}>
         </Route>
       </Routes>
      </div>

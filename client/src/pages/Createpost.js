@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import './Createpost.css';
@@ -48,10 +48,10 @@ const CreatePost = () => {
       console.log("Error:", error)
     }
   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const token = localStorage.getItem('token');
+    // https://peach-zebra-coat.cyclic.app/api/post
     const response = await fetch('https://peach-zebra-coat.cyclic.app/api/post', {
       method: 'POST',
       headers: {
@@ -72,6 +72,36 @@ const CreatePost = () => {
     }
     // Perform form submission logic here
   };
+
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      window.location.href = '/signin';
+    } else {
+      const userPromise = fetch('https://peach-zebra-coat.cyclic.app/api/user', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then((response) => {
+        if (!response.ok) {
+          window.location.href = '/signin';
+          // throw new Error('Failed to fetch user');
+        }
+        return response.json();
+      });
+  
+      Promise.all([userPromise])
+        .then(([userData]) => {
+          const user = userData.user; // Assuming user data is nested under 'user' property
+          // setPosts(posts);
+          console.log(user)
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    }
+  }, []);
 
   return (
     <div className="dashboard-container">

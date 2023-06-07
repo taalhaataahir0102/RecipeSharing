@@ -13,6 +13,7 @@ const Signup = () => {
 
     try {
       console.log("hi")
+      // https://peach-zebra-coat.cyclic.app/api/signup
       const response = await fetch('https://peach-zebra-coat.cyclic.app/api/signup', {
       method: 'POST',
       headers: {

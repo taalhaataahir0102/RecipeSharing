@@ -26,34 +26,34 @@ function Header() {
   };
 
   return (
-    <div className="header">
-      <div className="header-left">
-      <button className="header-btn" onClick={toggleCreatePost}>Create Post</button>
-        <button className="header-btn" onClick={toggleCategories}>
-          Categories
-        </button>
-        {isCategoriesOpen && (
-          <div className="dropdown-content">
-            <button className="dropdown-btn">Breakfast</button>
-            <button className="dropdown-btn">Lunch</button>
-            <button className="dropdown-btn">Dinner</button>
-            <button className="dropdown-btn">Vegetarian</button>
-            <button className="dropdown-btn">Dessert</button>
-          </div>
-        )}
-        <button className="header-btn" onClick={toggleSort}>
-          Sort
-        </button>
-        {isSortOpen && (
-          <div className="dropdown-content">
-            <button className="dropdown-btn">Rating</button>
-            <button className="dropdown-btn">Likes</button>
-            <button className="dropdown-btn">Recent</button>
-          </div>
-        )}
-        <button className="header-btn" onClick={handleLogout}>Logout</button>
+      <div className="header">
+        <div className="header-left">
+        <button className="header-btn" onClick={toggleCreatePost}>Create Post</button>
+          <button className="header-btn" onClick={toggleCategories}>
+            Categories
+          </button>
+          {isCategoriesOpen && (
+            <div className="dropdown-content">
+              <button className="dropdown-btn">Breakfast</button>
+              <button className="dropdown-btn">Lunch</button>
+              <button className="dropdown-btn">Dinner</button>
+              <button className="dropdown-btn">Vegetarian</button>
+              <button className="dropdown-btn">Dessert</button>
+            </div>
+          )}
+          <button className="header-btn" onClick={toggleSort}>
+            Sort
+          </button>
+          {isSortOpen && (
+            <div className="dropdown-content">
+              <button className="dropdown-btn">Rating</button>
+              <button className="dropdown-btn">Likes</button>
+              <button className="dropdown-btn">Recent</button>
+            </div>
+          )}
+          <button className="header-btn" onClick={handleLogout}>Logout</button>
+        </div>
       </div>
-    </div>
   );
 }
 

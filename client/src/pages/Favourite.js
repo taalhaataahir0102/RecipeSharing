@@ -186,7 +186,7 @@ const Dashboard = () => {
         return response.json();
       });
   
-      const postsPromise = fetch('https://peach-zebra-coat.cyclic.app/api/posts', {
+      const postsPromise = fetch('https://peach-zebra-coat.cyclic.app/api/favourites', {
         headers: {
           
           Authorization: `Bearer ${token}`,
