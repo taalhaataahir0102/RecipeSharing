@@ -17,6 +17,25 @@ function Header() {
     window.location.href = '/createpost';
   };
 
+  const toggleDesert = () => {
+    window.location.href = '/dessert';
+  };
+  const toggleVegetarian = () => {
+    window.location.href = '/vegetarian';
+  };
+  const toggleMeat = () => {
+    window.location.href = '/meat';
+  };
+  const toggleSortlikes = () => {
+    window.location.href = '/sortlikes';
+  };
+  const toggleSortcomments = () => {
+    window.location.href = '/sortcomments';
+  };
+  const toggleSortdates = () => {
+    window.location.href = '/sortdates';
+  };
+
   const handleLogout = () => {
     // Perform any necessary logout actions here, such as clearing token or user data
     localStorage.removeItem('token'); // Remove the token from localStorage
@@ -34,11 +53,9 @@ function Header() {
           </button>
           {isCategoriesOpen && (
             <div className="dropdown-content">
-              <button className="dropdown-btn">Breakfast</button>
-              <button className="dropdown-btn">Lunch</button>
-              <button className="dropdown-btn">Dinner</button>
-              <button className="dropdown-btn">Vegetarian</button>
-              <button className="dropdown-btn">Dessert</button>
+              <button className="dropdown-btn" onClick={toggleDesert}>Dessert</button>
+              <button className="dropdown-btn" onClick={toggleVegetarian}>Vegetarian</button>
+              <button className="dropdown-btn" onClick={toggleMeat}>Meat</button>
             </div>
           )}
           <button className="header-btn" onClick={toggleSort}>
@@ -46,9 +63,9 @@ function Header() {
           </button>
           {isSortOpen && (
             <div className="dropdown-content">
-              <button className="dropdown-btn">Rating</button>
-              <button className="dropdown-btn">Likes</button>
-              <button className="dropdown-btn">Recent</button>
+              <button className="dropdown-btn" onClick={toggleSortcomments}>Comments</button>
+              <button className="dropdown-btn" onClick={toggleSortlikes}>Likes</button>
+              <button className="dropdown-btn" onClick={toggleSortdates}>Recent</button>
             </div>
           )}
           <button className="header-btn" onClick={handleLogout}>Logout</button>

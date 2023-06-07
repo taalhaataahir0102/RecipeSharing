@@ -60,7 +60,7 @@ const Shoppinglist = () => {
       <div className="dashboard-content">
         <Topheader />
         <div className="profile-container">
-          <h1 className="title">PROFILE</h1>
+          <h1 className="title">Shopping List</h1>
           <ul className="shopping-list">
             {shoppingList.map((ingredient, index) => (
               <li key={index}>

@@ -118,7 +118,6 @@ const CreatePost = () => {
             <option value="Dessert">Dessert</option>
             <option value="Vegetarian">Vegetarian</option>
             <option value="Meat">Meat</option>
-            <option value="Cuisine">Cuisine</option>
           </select>
         </div>
         <div className="form-group">
