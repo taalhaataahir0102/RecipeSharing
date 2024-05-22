@@ -65,3 +65,7 @@ We welcome contributions from the community! To contribute, please follow these 
 
 Thank you for being a part of the RecipeSharing community! We hope you enjoy sharing and discovering new recipes.
 For any questions or support, please contact us at talhatahir01022001@gmail.com.
+
+## Demo Video:
+To see how the RecipeSharing website looks and works, watch our demo video below:
+https://github.com/taalhaataahir0102/RecipeSharing/blob/main/client/src/pages/images/recipe.mp4
