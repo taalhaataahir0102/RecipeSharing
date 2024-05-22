@@ -39,19 +39,19 @@ Stay tuned for these exciting updates and more!
 To get started with RecipeSharing, follow these steps:
 
 1. **Clone the repository:**
-   ```git clone https://github.com/taalhaataahir0102/RecipeSharing-Backend.git
+   ```git clone https://github.com/taalhaataahir0102/RecipeSharing-Backend.git```
 2. **Navigate to the server directory:**
-   ```cd server
+   ```cd server```
 3. **Install dependencies:**
-   ```npm install
+   ```npm install```
 3. **Start Server:**
-   ```node index.js
+   ```node index.js```
 4. **Navigate to the client directory in new terminal:**
    ```cd client
 5. **Install dependencies:**
-   ```npm install
+   ```npm install```
 6. **Start Client:**
-   ```npm start
+   ```npm start```
 
 ## Contributing
 We welcome contributions from the community! To contribute, please follow these steps:
