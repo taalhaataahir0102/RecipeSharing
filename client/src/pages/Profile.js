@@ -19,7 +19,7 @@ const Profile = () => {
       window.location.href = '/signin';
     } else {
       // If token is present, verify its validity
-      fetch('https://peach-zebra-coat.cyclic.app/api/user', {
+      fetch('http://localhost:5000/api/user', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -68,7 +68,7 @@ const Profile = () => {
     const token = localStorage.getItem('token');
   
     // Make a POST request to the backend API endpoint
-    fetch('https://peach-zebra-coat.cyclic.app/api/updatepassword', {
+    fetch('http://localhost:5000/api/updatepassword', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

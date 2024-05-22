@@ -13,15 +13,18 @@ const Signup = () => {
 
     try {
       console.log("hi")
-      // https://peach-zebra-coat.cyclic.app/api/signup
-      const response = await fetch('https://peach-zebra-coat.cyclic.app/api/signup', {
+      // https://recipe-sharing-backend.vercel.app/
+      // http://localhost:5000/api/signup
+      const response = await fetch('http://localhost:5000/api/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ fullName, email, password }),
     });
+    console.log("waiting")
       const data = await response.json();
+      console.log("received")
       const message = data.message;
       console.log(message);
       if (response.ok) {

@@ -9,7 +9,7 @@ const Signin = () => {
     e.preventDefault();
     try {
       // console.log("Hi")
-      const response = await fetch('https://peach-zebra-coat.cyclic.app/api/signin', {
+      const response = await fetch('http://localhost:5000/api/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

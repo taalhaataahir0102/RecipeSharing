@@ -31,7 +31,7 @@ const Dashboard = () => {
       console.log("postId:", postId);
       // Send the post id to the backend API
       const token = localStorage.getItem('token');
-      const response = await fetch('https://peach-zebra-coat.cyclic.app/api/liked', {
+      const response = await fetch('http://localhost:5000/api/liked', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ const Dashboard = () => {
   const handleCommentSubmit = async (postId, commentText) => {
     if (commentText) {
       try {
-        const response = await fetch('https://peach-zebra-coat.cyclic.app/api/comments', {
+        const response = await fetch('http://localhost:5000/api/comments', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -148,7 +148,7 @@ const Dashboard = () => {
     try {
       console.log(ingredient);
       const token = localStorage.getItem('token');
-      const response = await fetch('https://peach-zebra-coat.cyclic.app/api/addToShoppingList', {
+      const response = await fetch('http://localhost:5000/api/addToShoppingList', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -176,7 +176,7 @@ const Dashboard = () => {
     if (!token) {
       window.location.href = '/signin';
     } else {
-      const userPromise = fetch('https://peach-zebra-coat.cyclic.app/api/user', {
+      const userPromise = fetch('http://localhost:5000/api/user', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -188,7 +188,7 @@ const Dashboard = () => {
         return response.json();
       });
   
-      const postsPromise = fetch('https://peach-zebra-coat.cyclic.app/api/dessert', {
+      const postsPromise = fetch('http://localhost:5000/api/dessert', {
         headers: {
           
           Authorization: `Bearer ${token}`,

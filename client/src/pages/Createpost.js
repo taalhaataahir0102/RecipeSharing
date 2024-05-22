@@ -52,7 +52,7 @@ const CreatePost = () => {
     event.preventDefault();
     const token = localStorage.getItem('token');
     // https://peach-zebra-coat.cyclic.app/api/post
-    const response = await fetch('https://peach-zebra-coat.cyclic.app/api/post', {
+    const response = await fetch('http://localhost:5000/api/post', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -79,7 +79,7 @@ const CreatePost = () => {
     if (!token) {
       window.location.href = '/signin';
     } else {
-      const userPromise = fetch('https://peach-zebra-coat.cyclic.app/api/user', {
+      const userPromise = fetch('http://localhost:5000/api/user', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

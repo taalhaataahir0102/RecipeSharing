@@ -12,7 +12,7 @@ const Shoppinglist = () => {
     const fetchShoppingList = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('https://peach-zebra-coat.cyclic.app/api/shoppinglist', {
+        const response = await fetch('http://localhost:5000/api/shoppinglist', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -34,7 +34,7 @@ const Shoppinglist = () => {
   const handleIngredientClick = async (ingredient) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://peach-zebra-coat.cyclic.app/api/removefromlist', {
+      const response = await fetch('http://localhost:5000/api/removefromlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const Shoppinglist = () => {
   const handleEmailButtonClick = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://peach-zebra-coat.cyclic.app/api/email', {
+      const response = await fetch('http://localhost:5000/api/email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
