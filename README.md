@@ -44,15 +44,17 @@ To get started with RecipeSharing, follow these steps:
    ```cd server```
 3. **Install dependencies:** <br>
    ```npm install```
-3. **Start Server:** <br>
+4. **Update .env file:** <br>
+   Add your MongoDB URL to the env file <br>
+5. **Start Server:** <br>
    ```node index.js```
-4. **Navigate to the client directory in new terminal:** <br>
+6. **Navigate to the client directory in new terminal:** <br>
    ```cd client```
-5. **Install dependencies:** <br>
+7. **Install dependencies:** <br>
    ```npm install```
-6. **Start Client:** <br>
+8. **Start Client:** <br>
    ```npm start```
-7. ***Visit the link i.e, http://localhost:3000***
+9. ***Visit the link i.e, http://localhost:3000***
 
 ## Contributing
 We welcome contributions from the community! To contribute, please follow these steps:
